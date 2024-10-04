@@ -1,0 +1,357 @@
+
+{
+  "resourceType": "Questionnaire",
+  "language": "nb-NO",
+  "status": "draft",
+  "publisher": "NHN",
+  "meta": {
+    "profile": [
+      "http://ehelse.no/fhir/StructureDefinition/sdf-Questionnaire"
+    ],
+    "tag": [
+      {
+        "system": "urn:ietf:bcp:47",
+        "code": "nb-NO",
+        "display": "Bokmål"
+      }
+    ],
+    "security": [
+      {
+        "code": "3",
+        "display": "Helsehjelp (Full)",
+        "system": "urn:oid:2.16.578.1.12.4.1.1.7618"
+      }
+    ]
+  },
+  "contact": [
+    {
+      "name": "http://www.nhn.no"
+    }
+  ],
+  "subjectType": [
+    "Patient"
+  ],
+  "extension": [
+    {
+      "url": "http://helsenorge.no/fhir/StructureDefinition/sdf-sidebar",
+      "valueCoding": {
+        "system": "http://helsenorge.no/fhir/ValueSet/sdf-sidebar",
+        "code": "1"
+      }
+    },
+    {
+      "url": "http://helsenorge.no/fhir/StructureDefinition/sdf-information-message",
+      "valueCoding": {
+        "system": "http://helsenorge.no/fhir/ValueSet/sdf-information-message",
+        "code": "1"
+      }
+    },
+    {
+      "url": "http://helsenorge.no/fhir/StructureDefintion/sdf-itemControl-visibility",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://helsenorge.no/fhir/CodeSystem/AttachmentRenderOptions",
+            "code": "hide-help",
+            "display": "Hide help texts"
+          },
+          {
+            "system": "http://helsenorge.no/fhir/CodeSystem/AttachmentRenderOptions",
+            "code": "hide-sublabel",
+            "display": "Hide sublabel texts"
+          }
+        ]
+      }
+    }
+  ],
+  "id": "9492aca6-2bc9-4917-8ee8-37f974072429",
+  "item": [
+    {
+      "linkId": "f119da14-b33e-4c83-d4ca-a8fa1c07ee0a",
+      "type": "string",
+      "text": "first name ",
+      "extension": [
+        {
+          "url": "http://ehelse.no/fhir/StructureDefinition/validationtext",
+          "valueString": "write a valid name"
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/regex",
+          "valueString": "^[æøåÆØÅa-zA-Z\\- ]*$"
+        }
+      ],
+      "required": true
+    },
+    {
+      "linkId": "159901a7-b1c0-48c5-92f8-7149d0832945",
+      "type": "string",
+      "text": "middle name ",
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/regex",
+          "valueString": "^[æøåÆØÅa-zA-Z\\- ]*$"
+        },
+        {
+          "url": "http://ehelse.no/fhir/StructureDefinition/validationtext",
+          "valueString": "write a valid name"
+        }
+      ],
+      "required": true
+    },
+    {
+      "linkId": "c8d64b40-6c6f-4abb-998e-763449d0be1c",
+      "type": "string",
+      "text": "last name ",
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/regex",
+          "valueString": "^[æøåÆØÅa-zA-Z\\- ]*$"
+        },
+        {
+          "url": "http://ehelse.no/fhir/StructureDefinition/validationtext",
+          "valueString": "write a valid name"
+        }
+      ],
+      "required": false
+    },
+    {
+      "linkId": "59ce36b0-43bc-40bc-a503-9652e2721c05",
+      "type": "date",
+      "text": "DOB",
+      "required": true
+    },
+    {
+      "linkId": "20032e45-1695-4bba-8ad6-2f33acfa154c",
+      "type": "choice",
+      "text": "gender",
+      "required": true,
+      "answerOption": [
+        {
+          "valueCoding": {
+            "id": "14606486-736d-4641-d8e1-fb894e8edc67",
+            "code": "male",
+            "system": "urn:uuid:f7fa3971-7d3c-444b-819e-724ba937c311",
+            "display": "male"
+          }
+        },
+        {
+          "valueCoding": {
+            "id": "e209f084-5803-4c70-c9d6-221cab836a1d",
+            "code": "female",
+            "system": "urn:uuid:f7fa3971-7d3c-444b-819e-724ba937c311",
+            "display": "female"
+          }
+        },
+        {
+          "valueCoding": {
+            "id": "344e7438-3702-43af-8594-2df1b6274b4a",
+            "code": "lgbtq",
+            "system": "urn:uuid:f7fa3971-7d3c-444b-819e-724ba937c311",
+            "display": "LGBTQ"
+          }
+        },
+        {
+          "valueCoding": {
+            "id": "b80eeb89-338f-4a4f-a5fb-28ef41157c3f",
+            "code": "prefer-not-to-say",
+            "system": "urn:uuid:f7fa3971-7d3c-444b-819e-724ba937c311",
+            "display": "Prefer not to say"
+          }
+        }
+      ],
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/ValueSet/questionnaire-item-control",
+                "code": "radio-button"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "linkId": "0a4f0bae-ecfd-4f57-a6e1-b022ccbd4a7b",
+      "type": "integer",
+      "text": "age",
+      "required": true
+    },
+    {
+      "linkId": "b5a2eb0e-2f8c-4191-8253-d7d1cfea8b18",
+      "type": "string",
+      "text": "name of parent",
+      "required": true,
+      "enableWhen": [
+        {
+          "question": "0a4f0bae-ecfd-4f57-a6e1-b022ccbd4a7b",
+          "operator": "<=",
+          "answerInteger": 18
+        }
+      ]
+    },
+    {
+      "linkId": "2ee8a4f3-894a-4ac5-8ded-ce23722913f5",
+      "type": "choice",
+      "text": "gender",
+      "required": true,
+      "answerOption": [
+        {
+          "valueCoding": {
+            "id": "57f03389-a291-4ce3-8735-5e768eadb9a3",
+            "code": "male",
+            "system": "urn:uuid:077a9483-2ef6-4d44-831a-37514f10e2f2",
+            "display": "male"
+          }
+        },
+        {
+          "valueCoding": {
+            "id": "d934bf92-ff8c-48bb-f6b6-570031402b05",
+            "code": "female",
+            "system": "urn:uuid:077a9483-2ef6-4d44-831a-37514f10e2f2",
+            "display": "female"
+          }
+        }
+      ],
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/ValueSet/questionnaire-item-control",
+                "code": "radio-button"
+              }
+            ]
+          }
+        }
+      ],
+      "enableWhen": [
+        {
+          "question": "b5a2eb0e-2f8c-4191-8253-d7d1cfea8b18",
+          "operator": "exists",
+          "answerBoolean": true
+        }
+      ]
+    },
+    {
+      "linkId": "fc9bf0bf-bb53-4f7f-821d-b5a209ed4c3f",
+      "type": "string",
+      "text": "age of parent",
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/regex",
+          "valueString": "^[a-zA-Z-æøåÆØÅÁÀÄÉÈÊÎÏÑÓÒÔÖÙÜáàäçéèêîïñóòôöùüÇČĐŊŠŦŽčđŋšŧž'’*0-9 ]*$"
+        },
+        {
+          "url": "http://ehelse.no/fhir/StructureDefinition/validationtext",
+          "valueString": "correct age"
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/minLength",
+          "valueInteger": 1
+        }
+      ],
+      "required": true,
+      "enableWhen": [
+        {
+          "question": "b5a2eb0e-2f8c-4191-8253-d7d1cfea8b18",
+          "operator": "exists",
+          "answerBoolean": true
+        }
+      ],
+      "maxLength": 5
+    },
+    {
+      "linkId": "1ae8a6c7-472c-4b50-8545-82774be62b78",
+      "type": "string",
+      "text": "place of residence",
+      "required": false
+    },
+    {
+      "linkId": "792b41df-f20a-4f89-97f8-30abc122261f",
+      "type": "choice",
+      "required": true,
+      "answerOption": [
+        {
+          "valueCoding": {
+            "id": "0a6bb383-7b51-43a1-8e6e-5bb17d0329e6",
+            "code": "nhif",
+            "system": "urn:uuid:efddf408-0e9c-446d-9397-a990bd3a3164",
+            "display": "NHIF"
+          }
+        },
+        {
+          "valueCoding": {
+            "id": "14f520e3-18ae-4f96-bd20-fea1c2cc5f33",
+            "code": "britam",
+            "system": "urn:uuid:efddf408-0e9c-446d-9397-a990bd3a3164",
+            "display": "BRITAM"
+          }
+        },
+        {
+          "valueCoding": {
+            "id": "ab411cf4-9ac6-4b56-8c68-ab30266fca85",
+            "code": "lida-mama",
+            "system": "urn:uuid:efddf408-0e9c-446d-9397-a990bd3a3164",
+            "display": "LIDA MAMA"
+          }
+        },
+        {
+          "valueCoding": {
+            "id": "41fa0a97-3a26-4cd4-e9e3-fef5419cb643",
+            "code": "shif",
+            "system": "urn:uuid:efddf408-0e9c-446d-9397-a990bd3a3164",
+            "display": "SHIF"
+          }
+        },
+        {
+          "valueCoding": {
+            "id": "ae5db427-0ee9-4194-896b-e6c2b2bae4ba",
+            "code": "none",
+            "system": "urn:uuid:efddf408-0e9c-446d-9397-a990bd3a3164",
+            "display": "NONE"
+          }
+        }
+      ],
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/ValueSet/questionnaire-item-control",
+                "code": "radio-button"
+              }
+            ]
+          }
+        }
+      ],
+      "text": "ANY INSUARANCE"
+    },
+    {
+      "linkId": "8b108a17-3136-4520-82ae-c1604a30bbda",
+      "type": "string",
+      "text": "NUMBER TO PAY",
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/regex",
+          "valueString": "^((\\+|00)(\\d{1,3}))?\\d{5,12}$"
+        }
+      ],
+      "required": true,
+      "enableWhen": [
+        {
+          "question": "792b41df-f20a-4f89-97f8-30abc122261f",
+          "operator": "=",
+          "answerCoding": {
+            "system": "urn:uuid:efddf408-0e9c-446d-9397-a990bd3a3164",
+            "code": "none"
+          }
+        }
+      ]
+    }
+  ]
+}
